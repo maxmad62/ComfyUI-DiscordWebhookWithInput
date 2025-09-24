@@ -24,51 +24,89 @@ In your `ComfyUI/custom_nodes` directory:
 ```bash
 git clone https://github.com/maxmad62/ComfyUI-DiscordWebhookWithInput.git
 
-🔧 Usage
+Haha compris 😅
+Donc pour ton repo → tu copies/colles uniquement ce bloc en **README.md** (en anglais, comme demandé) :
 
-Set Discord Webhook
+---
 
-Add the node Set Discord Webhook and paste your Discord webhook URL.
+````markdown
+# ComfyUI-DiscordWebhookWithInput
 
-Run it once, it will save your webhook URL locally.
+A custom node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI) that allows you to send **an image + a message (e.g. your prompt)** to a Discord channel via a webhook.  
 
-Use Discord Webhook (+message input)
+This is based on the original Discord webhook node, with one key improvement:  
+👉 you can connect a text input directly into the node (instead of only typing fixed text inside the node).
 
-Add the node Use Discord Webhook (+message input).
+---
 
-Plug an image into image.
+## ✨ Features
+- Send an image and a message to a Discord webhook.
+- Optional: send only text, only image, or both.
+- Message input can be connected to your workflow (e.g. the same prompt you pass to CLIP).
+- Handles batched images (splits into multiple messages if needed).
+- Automatically resizes images >20 MB to respect Discord’s limits.
+- 2000-character message limit (Discord restriction).
 
-Plug a string (prompt, seed info, metadata…) into message.
+---
 
-Toggle:
+## 📦 Installation
 
-send_Image = true/false
+In your `ComfyUI/custom_nodes` directory:
 
-send_Message = true/false
+```bash
+git clone https://github.com/maxmad62/ComfyUI-DiscordWebhookWithInput.git
+````
 
-Run the workflow
+Then restart ComfyUI.
 
-The bot posts your message and/or image in the chosen Discord channel.
+---
 
-📋 Notes
+## 🔧 Usage
 
-Make sure to install the dependency if missing:
+1. **Set Discord Webhook**
 
-pip install discord-webhook
+   * Add the node `Set Discord Webhook` and paste your Discord webhook URL.
+   * Run it once, it will save your webhook URL locally.
 
+2. **Use Discord Webhook (+message input)**
 
-(or python_embeded\python.exe -m pip install discord-webhook if using portable ComfyUI on Windows).
+   * Add the node `Use Discord Webhook (+message input)`.
+   * Plug an **image** into `image`.
+   * Plug a **string** (prompt, seed info, metadata…) into `message`.
+   * Toggle:
 
-Discord message length is limited to 2000 characters.
+     * `send_Image = true/false`
+     * `send_Message = true/false`
 
-Images larger than 20 MB are resized automatically.
+3. **Run the workflow**
 
-📜 License
+   * The bot posts your message and/or image in the chosen Discord channel.
+
+---
+
+## 📋 Notes
+
+* Make sure to install the dependency if missing:
+
+  ```bash
+  pip install discord-webhook
+  ```
+
+  (or `python_embeded\python.exe -m pip install discord-webhook` if using portable ComfyUI on Windows).
+
+* Discord message length is limited to 2000 characters.
+
+* Images larger than 20 MB are resized automatically.
+
+---
+
+## 📜 License
 
 MIT License – feel free to use and modify.
 
-🙌 Credits
+---
 
-Original base node by Dayuppy
+## 🙌 Credits
 
-Modifications by maxmad62 (prompt input support)
+* Original base node by **Dayuppy**
+* Modifications by **maxmad62** (prompt input support)
