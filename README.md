@@ -24,9 +24,6 @@ In your `ComfyUI/custom_nodes` directory:
 ```bash
 git clone https://github.com/maxmad62/ComfyUI-DiscordWebhookWithInput.git
 
-Haha compris 😅
-Donc pour ton repo → tu copies/colles uniquement ce bloc en **README.md** (en anglais, comme demandé) :
-
 ---
 
 ````markdown
